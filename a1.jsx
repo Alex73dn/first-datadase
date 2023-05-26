@@ -1,18 +1,15 @@
-// Variable declarations
-var StudlyCapVar;
-var properCamelCase;
-var titleCaseOver;
-
-// Variable assignments
-StudlyCapVar = 10;
-properCamelCase = "A String";
-var titleCaseOver = 9000;
-
-let a = 48;
-let b = 108;
-let c = 33;
-
-// Only change code below this line
-a /= 12;
-b /= 4;
-c /= 11;
+const JSX = (
+    <div>
+      <h1>Hello World</h1>
+      <p>Lets render this to the DOM</p>
+    </div>
+  );
+  // Change code below this line
+  ReactDOM.render(JSX, document.getElementById("challenge-node"));
+  function App() {
+    return (
+      <div>
+        {JSX}      
+      </div>
+    );
+  }
