@@ -114,3 +114,49 @@ function cc(card) {
   return count > 0 ? count + " Bet" : count + " Hold";
  // если счёт не 0, то выводится count и ставка/держать, и если не цифра то тип становится строка! и работает -.
 }
+
+const myDog = {
+    "name": "Sunny",
+    "legs": 4,
+    "tails": 1,
+    "friends": ["Dogs", "Master" , 2]
+  }; // так можно отображать properties 
+
+  const testObj = {
+    "hat": "ballcap",
+    "shirt": "jersey",
+    "shoes": "cleats"
+  };
+  const hatValue = testObj.hat;      // берёт данные из const testObj поле hat Can AS: const hatValue = testObj ["hat"];
+  const shirtValue = testObj.shirt; // берёт данные из const testObj поле shirt        const shirtValue = testObj["shirt"]; 
+
+  const myDog1 = {
+    "name": "Coder",
+    "legs": 4,
+    "tails": 1,
+    "friends": ["freeCodeCamp Campers"]
+  };
+    myDog1.name = "Happy Coder"; // в объекте myDog1 мы поменяли поле "name"!или так - myDog["name"] = "Happy Coder";
+
+    const myDog3 = {
+        "name": "Happy Coder",
+        "legs": 4,
+        "tails": 1,
+        "friends": ["freeCodeCamp Campers"]
+      };
+        myDog3.bark = "woof"; // add properties bark to myDog3! или удаление delete myDog3.tails;
+
+        function phoneticLookup(val) {
+            let result = "";
+            const lookup = {
+            "alpha": "Adams",
+            "bravo": "Boston",
+            "charlie": "Chicago",
+            "delta": "Denver",
+            "echo": "Easy",
+            "foxtrot": "Frank",
+            }
+             result = lookup[val];
+             return result;
+          }
+          phoneticLookup("charlie"); // функция возвращает из объекта lookup соответствующие значения в функцию
