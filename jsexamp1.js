@@ -190,3 +190,85 @@ const myDog = {
             }
           ];
             const secondTree = myPlants[1].list[1]; // вывод второго элемента массива и второго элемента из второго массива - "pine"
+
+  const recordCollection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold'
+  }
+};
+function updateRecords(records, id, prop, value) {
+  if (value === '') {
+    // If value is an empty string, delete the given prop property from the album
+    delete records[id][prop];
+  } else if (prop !== 'tracks') {
+    // If prop isn't tracks and value isn't an empty string, assign the value to that album's prop
+    records[id][prop] = value;
+  } else {
+    // If prop is tracks and value isn't an empty string
+    if (!records[id].hasOwnProperty('tracks')) {
+      // If the album does not have a tracks property, assign it an empty array
+      records[id].tracks = [];
+    }
+    // Add the value as the last item in the album's tracks array
+    records[id].tracks.push(value);
+  }
+  return records;
+}
+updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+
+const myArray = [];
+let i = 5;
+while (i >= 0) {
+  myArray.push(i);
+  i--;
+}
+myArray; // [5, 4, 3, 2, 1, 0]
+
+const myArray1 = [];
+for (let i = 1; i <6 ; i++) {
+  myArray1.push(i);
+} // result [1, 2, 3, 4, 5]
+
+const myArray2 = [];
+for (let i=1; i<11; i +=2) {
+  myArray2.push(i);
+} // [1, 3, 5, 7, 9] !!!! важно, что не до 9, а до 11, т.к. шаг 2!!!!!!
+
+const myArr = [2, 3, 4, 5, 6];
+let total = 0;
+for (let i = 0; i < myArr.length; i++) {
+  if (total >= 20) {
+    break;
+  }
+  total += myArr[i];
+  console.log(myArr[i]);
+} // завязываем total на сумму элементов массива и делаем пока из общая суммы не достигнет 20!!!
+
+function multiplyAll(arr) {
+  let product = 1;
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+      product *= arr[i][j];
+    }
+  }
+  return product;
+}
+multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);// = 5040, result - multiplication all elements of Array
+
+
+
+
