@@ -269,6 +269,70 @@ function multiplyAll(arr) {
 }
 multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);// = 5040, result - multiplication all elements of Array
 
+function sum(arr, n) {
+  if (n<=0) {
+    return 0;
+  } else {
+    return sum(arr,n-1) + arr[n-1];
+  }
+} // рекрусивная функция возвращает сама себя, складыая соответствующий элемент с элементом созданного массива
 
+const contacts = [
+  {
+    firstName: "Akira",
+    lastName: "Laine",
+    number: "0543236543",
+    likes: ["Pizza", "Coding", "Brownie Points"],
+  },
+  {
+    firstName: "Harry",
+    lastName: "Potter",
+    number: "0994372684",
+    likes: ["Hogwarts", "Magic", "Hagrid"],
+  },
+  {
+    firstName: "Sherlock",
+    lastName: "Holmes",
+    number: "0487345643",
+    likes: ["Intriguing Cases", "Violin"],
+  },
+  {
+    firstName: "Kristian",
+    lastName: "Vos",
+    number: "unknown",
+    likes: ["JavaScript", "Gaming", "Foxes"],
+  },
+];
+function lookUpProfile(name, prop) {
+   for (let i = 0; i < contacts.length; i++) {
+    if (contacts[i].firstName === name) {
+      return contacts[i][prop] || "No such property";
+    } // пробегаю все элементы массива с помощью функции "for" если функция находит введённый контакт (он === contacts[i].firstName)
+  } // функция присваевает либо свойство либо НЕТ ТАКОГО СВОЙСТВА, иначе НЕТ ТАКОГО КОНТАКТА
+  return "No such contact";
+}
 
+function randomWholeNum() {
+  return Math.floor(Math.random() * 10);
+} // Результат = округлённое до целого значения (Math.floor) случайно сгенерированного десятичного числа (Math.random) от 0 до 9!
 
+function randomRange(myMin, myMax) {
+  return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+} // возвращает случайное целое число в заданном диапазоне между myMin и myMax, включая оба конца диапазона.
+
+function convertToInteger(str) {
+  const a = parseInt(str);
+  return a;
+  } // parseInt() return целое число, например 007 - вернёт 7!!!!  parseInt(str,2) вернёт двоичное число и т.д. 16, 64 ...
+
+  function rangeOfNumbers(startNum, endNum) {
+    if (endNum < startNum) {
+      return [];
+    } else if (endNum === startNum) {
+      return [startNum];
+    } else {
+      const newArray = rangeOfNumbers(startNum, endNum - 1);
+      newArray.push(endNum);
+      return newArray;
+    }
+  }// рекрусивная ф-ция даёт rangeOfNumbers(1, 5) should return [1, 2, 3, 4, 5] или rangeOfNumbers(4, 4) should return [4].
