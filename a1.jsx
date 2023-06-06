@@ -1,15 +1,33 @@
-const JSX = (
+const TypesOfFruit = () => {
+  return (
     <div>
-      <h1>Hello World</h1>
-      <p>Lets render this to the DOM</p>
+      <h2>Fruits:</h2>
+      <ul>
+        <li>Apples</li>
+        <li>Blueberries</li>
+        <li>Strawberries</li>
+        <li>Bananas</li>
+      </ul>
     </div>
   );
-  // Change code below this line
-  ReactDOM.render(JSX, document.getElementById("challenge-node"));
-  function App() {
+};
+const Fruits = () => {
+  return (
+    <div>
+        <TypesOfFruit />
+    </div>
+  );
+};
+class TypesOfFood extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
     return (
       <div>
-        {JSX}      
+        <h1>Types of Food:</h1>
+          <Fruits />
       </div>
     );
   }
+};
