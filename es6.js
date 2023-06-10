@@ -37,3 +37,14 @@ const sum = (...args) => {
     return failureItems;
   }
   const failuresList = makeList(result.failure); // функцией создаётся массив из элементов const result
+
+  class Vegetable {
+    constructor(name) {
+      this.name = name;
+    }
+    takeOff() {
+      console.log("This is " + this.name + "!");
+    }
+  }
+  const carrot = new Vegetable('carrot');
+  console.log(carrot.name); // Should display 'carrot'
