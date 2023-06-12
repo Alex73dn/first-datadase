@@ -48,3 +48,8 @@ const sum = (...args) => {
   }
   const carrot = new Vegetable('carrot');
   console.log(carrot.name); // Should display 'carrot'
+
+  const add = (x, y) => {
+    return x + y;
+  }
+    export { add }; // можно вызывать в любой другой точки
