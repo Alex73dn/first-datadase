@@ -53,3 +53,34 @@ const sum = (...args) => {
     return x + y;
   }
     export { add }; // можно вызывать в любой другой точки
+
+    import { uppercaseString } from './string_functions.js';  
+    uppercaseString("hello");
+
+    import * as stringFunctions from "./string_functions.js";
+      stringFunctions.uppercaseString("hello");
+      stringFunctions.lowercaseString("WORLD!");
+
+  const makeServerRequest = new Promise((resolve, reject) => {
+        let responseFromServer = true;
+          if(responseFromServer) {
+          resolve("We got the data");
+        } else {  
+          reject("Data not received");
+        }
+        makeServerRequest.then(result => {
+        console.log(result);
+    });
+   }); // метод Промис Then, или если Promise сработал, сразу отрабатывает then
+
+   const makeServerRequest1 = new Promise((resolve, reject) => {
+    let responseFromServer = false;
+      if(responseFromServer) {
+      resolve("We got the data");
+    } else {  
+      reject("Data not received");
+    }
+  });
+  makeServerRequest1.catch(error => {
+    console.log(error );
+  }); // тоже что и выше, только с параметром error
