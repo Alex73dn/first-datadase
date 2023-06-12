@@ -64,3 +64,26 @@ class ToDo extends React.Component {
         <List tasks={["walk dog", "workout", "jumping"]}/>
       </div>
     );  }}; // <p>{props.tasks.join(', ')}</p> добавляет массив событий к class ToDo extends React.Component
+
+    const ShoppingCart1 = (props) => {
+      return (
+        <div>
+          <h1>Shopping Cart Component</h1>
+        </div>
+      )
+    };
+    ShoppingCart1.defaultProps = { items : 0 } // рендерится ShoppingCart с начальным значением Null.
+
+    const Items = (props) => {
+      return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
+    }
+       Items.defaultProps = {
+      quantity: 0 }
+        class ShoppingCart2 extends React.Component {
+      constructor(props) {
+        super(props);  }
+      render() {
+        return <Items quantity={10} />
+      }
+    };// result - Current Quantity of Items in Cart: 10
+    
