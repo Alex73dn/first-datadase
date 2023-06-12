@@ -46,3 +46,21 @@ class TypesOfFood extends React.Component {
   }
 };
 ReactDOM.render(<TypesOfFood /> , document.getElementById('challenge-node')) // генерация вывода TypesOfFood посредствам renderDom
+
+const List = (props) => {
+  return <p>{props.tasks.join(', ')}</p>
+};
+class ToDo extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>To Do Lists</h1>
+        <h2>Today</h2>
+        <List tasks={["walk dog", "workout"]}/>
+        <h2>Tomorrow</h2>
+        <List tasks={["walk dog", "workout", "jumping"]}/>
+      </div>
+    );  }}; // <p>{props.tasks.join(', ')}</p> добавляет массив событий к class ToDo extends React.Component
