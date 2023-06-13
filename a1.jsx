@@ -86,4 +86,22 @@ class ToDo extends React.Component {
         return <Items quantity={10} />
       }
     };// result - Current Quantity of Items in Cart: 10
+
+    const Items = (props) => {
+      return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
+    };
+    Items.propTypes = {
+      quantity: PropTypes.number.isRequired
+    };// этот встроенный запрос возвращает quantity как число! number.isRequired
+    Items.defaultProps = {
+      quantity: 0
+    };
+    class ShoppingCart extends React.Component {
+      constructor(props) {
+        super(props);
+      }
+      render() {
+        return <Items />
+      }
+    };
     
