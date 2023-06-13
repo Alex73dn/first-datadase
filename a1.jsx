@@ -136,3 +136,4 @@ class ToDo extends React.Component {
       name: PropTypes.string.isRequired
     };// имени присваевается свойство строка. 
     
+    
