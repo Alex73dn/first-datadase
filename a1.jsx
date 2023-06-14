@@ -136,4 +136,30 @@ class ToDo extends React.Component {
       name: PropTypes.string.isRequired
     };// имени присваевается свойство строка. 
     
-    
+    class StatefulComponent extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {firstName: 'Alex'}
+      }
+      render() {
+        return (
+          <div>
+            <h1>{this.state.firstName}</h1>
+          </div>
+        );
+      }
+    };
+
+    class StatefulComponent extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {firstName: 'Alex'}
+      }
+      render() {
+        return (
+          <div>
+            <h1>{this.state.firstName}</h1>
+          </div>
+        );
+      }
+    };// использование компонента конструктора в React.Component
