@@ -84,3 +84,10 @@ const sum = (...args) => {
   makeServerRequest1.catch(error => {
     console.log(error );
   }); // тоже что и выше, только с параметром error
+
+  let dog = {
+    name: "Spot",
+    numLegs: 4,
+    sayLegs: function() {return "This dog has " + this.numLegs + " legs.";}
+  };
+  dog.sayLegs(); // возврат значения через this
