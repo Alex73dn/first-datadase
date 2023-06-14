@@ -163,3 +163,24 @@ class ToDo extends React.Component {
         );
       }
     };// использование компонента конструктора в React.Component
+
+    class MyComponent extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          name: 'Initial State'
+        };
+        this.handleClick = this.handleClick.bind(this);
+      }
+      handleClick() {
+          this.setState({
+            name: 'React Rocks!'}); // меняется значение состояния this
+      }
+      render() {
+        return (
+          <div>
+            <button onClick={this.handleClick}>Click Me</button>
+            <h1>{this.state.name}</h1>
+          </div>
+        );
+      }};// при нажатии на кнопку меняется значение 'Initial State' на 'React Rocks!'
