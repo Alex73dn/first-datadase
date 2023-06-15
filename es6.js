@@ -109,3 +109,18 @@ const sum = (...args) => {
       ownProps.push(property);
     }
   } // создание массива с присвоение свойства можно добавить св-во Bird.prototype.numFlights = 2 ниже после фун. Bird
+
+  function Dog(name) {
+    this.name = name;
+  }
+   function joinDogFraternity(candidate) {
+    if (candidate.constructor === Dog) {
+      return true;
+    } else { return false; }
+  } // с помощью оператора constructor сравниваем значения присоеденнёного объекта
+
+  function Dog(name) {
+    this.name = name;
+  }
+    let beagle = new Dog("Snoopy"); // let beagle = Object.create(Animal.prototype); усли Dog супер функция!
+    Dog.prototype.isPrototypeOf(beagle); // команда isPrototypeOf проверяет, является ли beagle прототипом Dog!

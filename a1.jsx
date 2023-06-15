@@ -179,8 +179,34 @@ class ToDo extends React.Component {
       render() {
         return (
           <div>
-            <button onClick={this.handleClick}>Click Me</button>
+            <button onClick={this.handleClick}>Click Me</button> // без handleClick не будет возвращаться значение
             <h1>{this.state.name}</h1>
           </div>
         );
       }};// при нажатии на кнопку меняется значение 'Initial State' на 'React Rocks!'
+
+      class MyComponent extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            visibility: false
+          };
+      this.toggleVisibility = this.toggleVisibility.bind(this);
+        } // назначаем метод toggleVisibility
+      toggleVisibility() {
+          this.setState((prevState) => ({
+            visibility: !prevState.visibility
+          })); // ! NOT значение, следовательно меняем состояние параметра visibility
+        }
+        render() {
+          if (this.state.visibility) { // если visibility: true, то видим надпись
+            return (
+              <div>
+                <button onClick={this.toggleVisibility}>Click Me</button>
+                <h1>Now you see me!</h1>
+              </div>);
+          } else { // иначе надписи нет
+            return (
+              <div>
+                <button onClick={this.toggleVisibility}>Click Me</button>
+              </div>);}}}
