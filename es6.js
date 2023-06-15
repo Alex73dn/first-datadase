@@ -91,3 +91,21 @@ const sum = (...args) => {
     sayLegs: function() {return "This dog has " + this.numLegs + " legs.";}
   };
   dog.sayLegs(); // возврат значения через this
+
+  function House(numBedrooms) {
+    this.numBedrooms = numBedrooms;
+  }
+  let myHouse  = new House(4);
+  let isInstance = myHouse instanceof House; // функция ставнения instanceof
+
+  function Bird(name) {
+    this.name = name;
+    this.numLegs = 2;
+  }
+  let canary = new Bird("Tweety");
+  let ownProps = [];
+  for (let property in canary) {
+    if(canary.hasOwnProperty(property)) {
+      ownProps.push(property);
+    }
+  } // создание массива с присвоение свойства можно добавить св-во Bird.prototype.numFlights = 2 ниже после фун. Bird
