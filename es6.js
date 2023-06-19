@@ -124,3 +124,13 @@ const sum = (...args) => {
   }
     let beagle = new Dog("Snoopy"); // let beagle = Object.create(Animal.prototype); усли Dog супер функция!
     Dog.prototype.isPrototypeOf(beagle); // команда isPrototypeOf проверяет, является ли beagle прототипом Dog!
+
+    function Animal() { }
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+let Dog = Object.create(Animal.prototype);
+Dog.prototype = Object.create(Animal.prototype); // наследование Dog  от Animal свойств.
